@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  My Blog
+{% endblock %}
+
+{% block content %}
+  <header id="main-navigatioin">
+    <h1><a href="">Attila's Blog</a></h1>
+    <nav>
+      <a href="">All Posts</a>
+    </nav>
+    <p>I'm glad you're here</p>
+  </header>
+
+  <section id="welcome">
+    <header>
+      <img src="" alt="Photo of Attila the site owner" />
+      <h2>Welcome to my blog</h2>
+      <p>This is a paragraph of text.</p>
+    </header>
+  </section>
+  <section id="latest-posts">
+    <h2>Latest Posts</h2>
+    <ul>
+      <li>
+        <article class="post">
+          <a href=""><img src="" alt="Mountain Hiking" /></a>
+          <div class="post-content">
+            <h3>Mountain Hiking</h3>
+            <p>This is a paragraph of text.</p>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>git branch: Shows a list of all local branches. The current local branch will be marked with an asterisk (*).</p>
+    <p>git branch -r: Shows a list of all remote branches. You can also use this command to see the remote branches in another branch by specifying the branch name. For example, git branch -r branch_name.</p>
+  </section>
+{% endblock %}
