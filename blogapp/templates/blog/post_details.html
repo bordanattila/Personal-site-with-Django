@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files%}
+    <link rel="stylesheet" href="{% static 'post_detail.css' %}">
+{% endblock %}
+
+{% block title %}
+  Post Detail 
+{% endblock %}
+
+{% block content %}
+    <section id="summary">
+        <h2>My Posts</h2>
+        <article>
+            <img src="" alt="">
+            <address>ththt</address>
+            <div>
+                last updated
+            </div>
+        </article>
+    </section>
+
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad eveniet rerum obcaecati explicabo illum voluptatum culpa voluptatibus quidem ducimus nihil nisi optio eaque veniam, aliquam facere ipsum architecto quae.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, culpa iste nihil maiores earum odio. Iusto rem nostrum error expedita suscipit cupiditate culpa dolorum quasi ipsam ducimus, sequi voluptatum! Natus.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem iure velit ut ullam porro nisi doloremque quasi dicta facere cupiditate est repellat, amet autem recusandae fugit, hic excepturi quae magni!</p>
+    </main>
+{% endblock%}

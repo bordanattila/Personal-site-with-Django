@@ -12,9 +12,9 @@
 </head>
 <body>
     <header id="main-navigation">
-        <h1><a href="">Attila's Blog</a></h1>
+        <h1><a href="{% url "starting_page" %}">Attila's Blog</a></h1>
         <nav>
-          <a href="">All Posts</a>
+          <a href="{% url "posts_page" %}">All Posts</a>
         </nav>
         <p class="headerText">I'm glad you're here</p>
       </header>

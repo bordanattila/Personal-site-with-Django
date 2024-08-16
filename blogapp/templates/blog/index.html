@@ -1,20 +1,19 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-{% block css_files%}
-<link rel="stylesheet" href="{% static 'post.css' %}">
-<link rel="stylesheet" href="{% static 'index.css' %}">
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'post.css' %}" />
+  <link rel="stylesheet" href="{% static 'index.css' %}" />
 {% endblock %}
 
 {% block title %}
   My Blog
 {% endblock %}
 
-
 {% block content %}
   <section id="welcome">
     <header>
-      <img src="{% static "blogapp/images/me.jpg" %}" alt="Photo of Attila the site owner" />
+      <img src="{% static 'blogapp/images/me.jpg' %}" alt="Photo of Attila the site owner" />
       <h2>Welcome to my blog</h2>
       <p>This is a paragraph of text.</p>
     </header>
@@ -22,7 +21,9 @@
   <section id="latest-posts">
     <h2>Latest Posts</h2>
     <ul>
-        {% include "blog/includes/post.html" %}
+      {% for post in posts %}
+        {% include 'blog/includes/post.html' %}
+      {% endfor %}
     </ul>
   </section>
 
