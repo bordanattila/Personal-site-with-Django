@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from datetime import date
 
 all_posts = [
     {
         "slug": "first-post",
         "title": "Hiking in the Mountains",
-        "date": (2022, 1, 1),
+        "date": date(2021, 1, 21),
         "author": "John Doe",
         "image": "random.jpg",
         "excerpt": "Hiking in the mountains is a great way to get some exercise and enjoy the beautiful scenery.",
@@ -23,7 +24,7 @@ all_posts = [
         "slug": "hike-in-the-mountains",
         "image": "dragon-ball-z.jpg",
         "author": "Maximilian",
-        "date": (2021, 7, 21),
+        "date": date(2022, 1, 21),
         "title": "Mountain Hiking",
         "excerpt": "There's nothing like the views you get when hiking in the mountains! And I wasn't even prepared for what happened whilst I was enjoying the view!",
         "content": """
@@ -44,7 +45,7 @@ all_posts = [
         "slug": "programming-is-fun",
         "image": "yogurt.jpg",
         "author": "Maximilian",
-        "date": (2022, 3, 10),
+        "date": date(2023, 1, 21),
         "title": "Programming Is Great!",
         "excerpt": "Did you ever spend hours searching that one error in your code? Yep - that's what happened to me yesterday...",
         "content": """
@@ -65,7 +66,7 @@ all_posts = [
         "slug": "into-the-woods",
         "image": "harley_quinn.jpg",
         "author": "Maximilian",
-        "date": (2020, 8, 5),
+        "date": date(2024, 1, 21),
         "title": "Nature At Its Best",
         "excerpt": "Nature is amazing! The amount of inspiration I get when walking in nature is incredible!",
         "content": """
@@ -100,8 +101,13 @@ def starting_page(request):
 
 
 def posts(request):
-    return render(request, "blog/posts_page.html")
+    return render(request, "blog/posts_page.html", {
+        "all_posts": all_posts,
+    })
 
 
 def post_detail(request, slug):
-    return render(request, "blog/post_detail.html")
+    selected_post = next(post for post in all_posts if post["slug"] == slug)
+    return render(request, "blog/post_details.html", {
+        "selected": selected_post
+    })
