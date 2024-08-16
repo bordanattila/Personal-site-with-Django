@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'post_detail.css' %}" />
+{% endblock %}
+
+{% block title %}
+  {{ selected.title }}
+{% endblock %}
+
+{% block content %}
+  <section id="summary">
+    <h2>{{ selected.title }}</h2>
+    <article>
+      <img src="{% static 'blogapp/images/'|add:selected.image %}" alt="{{ selcted.title }}" />
+      <address>by {{ selected.author|title }}</address>
+      <div>
+        Last updated <time>{{ selected.date|date:'Y M d' }}</time>
+      </div>
+    </article>
+  </section>
+
+  <main>{{ selected.content|linebreaks }}</main>
+{% endblock %}
